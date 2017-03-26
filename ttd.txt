@@ -1,0 +1,113 @@
+* client will have page for showing a carosel list of top performers (objects list) (pagenated)
+* there will be a user account with a page for your account
+* the performer object page will have all the metadata for the performer pulled out from
+the url of the performer's page used to create the page
+* there will be a voted tag column where custom tags are added and then voted on to label
+the performer's traits (more votes = more significant trait)
+*for all the adult cam sites there are, there will be a data file on the server that will be updated
+that can parse the page for relevant data
+*performers can eventually validate their page and add stuff to it if they wish?
+*users can comment and stuff (customizable)
+
+Adult Show Data model:
+
+Show {
+  Performers {
+
+    -Name
+    -Sex
+    -Hair Color
+    -Age
+    -Height
+    -Weight
+    -Cup Size
+    -Penis Length
+  }
+
+  -Location
+  -Languages
+  -Sites: {
+    -Site name
+    -Bio url
+    -Chatroom url
+    -isOnline,
+    -videoStreamUrl,
+    -MondaySchedule {
+      -Start time
+      -End Time
+     }
+     -TuesdaySchedule...
+   }
+
+   TwitterHandle,
+   FacebookPageUrl,
+   InstagramHandle,
+   Website,
+   SkypeHandle
+
+   VideoIntroUrl
+   Gallery[ImageUrl]
+
+    Tags {
+      TagTitle,
+      Upvotes,
+      Downvotes
+    }
+
+
+}
+
+
+--Create model input page:
+  There will be a flat file on the server that will map html in a page to metadata in the Show model:
+  So, each metadata field should have a unique name. Columns are comma delimited
+
+    MetaData Field, pageURL,                dataXPath
+    TwitterHandle,  livejasmin.com/abc.php  body/p/a
+
+    This file will be defined and updated if need be.  Metadata for the model will be cached but
+    everytime the show page is loaded, it dynamically reads the pages and parses for data again, updating the database with cached database
+
+
+    The Add Show page will have fields like:
+      LiveJasmin Show Page URL
+      Streamate Bio url
+      Other site page urls  (one field for each site metadata parsing file defined)
+      <TagList> (eventually integrate knowshowgo tags)
+      <Add Show Button>  (checks if this show has been added)
+
+
+      Adding the show will parse the metadata, create the show entry in the db,
+
+
+
+
+
+
+First, start with a simple version where we have a Performer page that has fields we can fill
+in or are dynamically read in by parsing performer's page
+That gets added to the model (database), and we can later add tags
+
+*Pick the best performers we can find and add them into the database
+*Sign up the affiliate account and have each performer's pics link to the affiliate link to their performer page
+*Talk to the performers and see what other sites they may work through
+*Maybe add a function to message or alert someone if the performer is going live
+
+--BEST OF CAMS--
+*Front page will first have my ordering of hottest from top left to bottom right and pagenated...
+*then divided into categories
+*then add tags and search by tags
+*user can get emailed if criteria he likes shows up
+
+first add my own tags to each performer...
+then those tags will show up when the user creates and account and chooses tags in order
+of importance that he will want to look at.
+Then his front page will be ordered by what he chose
+and when new performers with those tags are added they will appear and he will be alerted
+
+Each performer can be rated in different ways.  people can rate down tags if they dont like it
+We may want to create a review and links to the performers tube page, anything that we can monetize.
+
+
+Then we upload our site to a web server and SEO it and market it any way we can (using dating sites, CL, email blasts,
+ forums, camsite chatrooms ;)

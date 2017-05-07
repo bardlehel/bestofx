@@ -1,25 +1,38 @@
 <head>
-  <title>bestofx</title>
+    <title>bestofx</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="sitemetadata">
+  <select>
+    {{#each}} <option>site</option>
+  </select>
+  <input type="text" name="fieldname" />
+  <input type="text" name="selector" />
+  <button>add</button>
+  <!-- each show all added fields and selectors + sample data -->
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="inputshow">
+  <input name="showname" />
+  <input name="showurl1" />
+  <input name="showurl2" />
+  <input name="showurl3" />
+  <button>submit</button>
 </template>
+
+<template name="showdetails">
+{{taglist}}
+</template>
+
+<template name="carouselpage">
+<!-- list carousels -->
+</template>
+<template name="carousel"></template>
+<template name="showthumb"></template>
+<template name="login"></template>
+<template name="accountinfo"></template>
+<template name="taglist"></template>
+<template name="tag"><template>

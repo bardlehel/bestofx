@@ -59,8 +59,10 @@ Show {
 
 
 --Create model input page:
-  There will be a flat file on the server that will map html in a page to metadata in the Show model:
-  So, each metadata field should have a unique name. Columns are comma delimited
+   For livejasmin, flirt4free and every cam site, we will extract the metadata selectors
+   and put them in a collection in mongodb.  then we just have to add the site link in the
+   input page.  after entering, it will load the html and use the saved selectors to 
+   grab the text and place them in the db
 
     MetaData Field, pageURL,                dataXPath
     TwitterHandle,  livejasmin.com/abc.php  body/p/a
